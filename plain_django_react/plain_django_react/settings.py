@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     "frontend",
     "webpack_loader",
     # Custom
-    "orders",
 ]
 
 WEBPACK_LOADER = {
