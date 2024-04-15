@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "frontend",
     "webpack_loader",
     # Custom
+    "books",
 ]
 
 WEBPACK_LOADER = {
