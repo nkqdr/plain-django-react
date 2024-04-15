@@ -36,22 +36,6 @@ class BaseFilterBackend(DRFBaseFilterBackend):
         params = request.query_params.get(self.filtering_param, None)
         if params:
             filter_json = json.loads(params)
-            if 'id' in filter_json:
-                ids = filter_json['id']
-                # Disable default filter when filtering by IDs
-                queryset = queryset.filter(id__in=ids)
-                filter_json.pop('id', None)
-            # if 'q' in filter_json:
-            #     q = filter_json['q']
-            #     query = filter_nested(model_class=queryset.model, checked_models=[], q=q)
-            #     queryset = queryset.filter(query)
-            #     filter_json.pop('q', None)
-            if 'delivery_on_risk' in filter_json: # XXX Hack
-                filter_json.pop('delivery_on_risk', None)
-
-            for exclude_filter in getattr(view, 'exclude_filters', self.exclude_filters):
-                filter_json.pop(exclude_filter, None)
-
             queryset = queryset.filter(**filter_json)
 
         return queryset.distinct()
