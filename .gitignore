@@ -1,4 +1,6 @@
 .DS_Store
+Pipfile
+Pipfile.lock
 
 plain_django_react/db.sqlite3
 
