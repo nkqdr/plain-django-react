@@ -1,0 +1,8 @@
+.DS_Store
+
+plain_django_react/db.sqlite3
+
+plain_django_react/frontend/node_modules
+plain_django_react/frontend/static/frontend
+plain_django_react/frontend/webpack-stats.json
+plain_django_react/frontend/package-lock.json
